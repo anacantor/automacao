@@ -1,0 +1,55 @@
+<p>
+
+<h3>Shipping Prices</h3>
+
+<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+  <span>{{ shipping.type }}</span>
+  <span>{{ shipping.price | currency }}</span>
+</div>
+
+</p>
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-shipping',
+  templateUrl: './shipping.component.html',
+  styleUrls: ['./shipping.component.css']
+})
+export class ShippingComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-shipping',
+  templateUrl: './shipping.component.html',
+  styleUrls: ['./shipping.component.css']
+})
+export class ShippingComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+[
+  {
+    "type": "ML2RC2",
+    "price": 20
+  },
+  {
+    "type": "ML1RC2",
+    "price": 9.99
+  },
+  {
+    "type": "MQ2RC2",
+    "price": 2.99
+  }
+]

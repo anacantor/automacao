@@ -1,0 +1,106 @@
+
+<ab name="{{ name }}"></ab>
+
+<p>
+
+  VENDA DE MATERIAIS E EQUIPAMENTO PARA AUTOMAÇÃO INDUSTRIAL
+
+</p>
+
+<p>
+<inicio name="{{name}}"></inicio>
+</p>
+
+<p>
+<empresav name="{{name}}"></empresav>
+</p>
+
+<p>
+<contato name="{{name}}"></contato>
+numero de contato:
+endereço:
+
+<cadastrese name="{{name}}"></cadastrese>
+
+<p>
+
+  Seja Bem-Vindo 
+  PRODUTOS DA MELHORES MARCAS
+
+</p>
+
+<p>
+  Rua Bandeira, n°45. Bairro: Centro Camaçari-BA. CEP: 42800-130
+
+</p>
+
+<div>
+
+  <p>Nome Empresa:{{nome}}</p>cnpj
+  <p>CNPJ:{{}}</p>  
+  <p>As ultimas entradas são {{CNPJ[0]}}, {{CNPJ[1]}} y {{CNPJ[2]}}</p>
+  <p>No ultimos tres meses entrou: {{ultimaentrada()}}</p>
+  <p>{{esActivo()}}</p>
+
+</div>
+
+<div>
+
+  <p>Ingrese nome completo<input type="text" [(ngModel)]="Nome"></p>
+  <p>Ingrese nomeE<input type="text" [(ngModel)]="NomeE"></p>  
+  <p>Ingrese seu CNPJ<input type="number" [(ngModel)]="cnpj"></p>
+  <p>Ingrese seu CPF<input type="number" [(ngModel)]="cpf"></p> 
+  <p>Ingrese seu email<input type="text" [(ngModel)]='email'></p>
+  <p>Ingrese sua senha<input type="number" [(ngmodel)]='senha'></p>
+  <p>Ingrese seu contato<input tgype="number" [(ngModel)]='contato'></p>
+  <p>Datos completos:{{nome}},{{nomeE}}</p>
+
+</div>
+
+<div>
+
+  <h1>Administração articulos</h1>
+
+    <table border="1" *ngIf="temRegistros(); else simartigos">
+      <tr>
+        <td>Codigo</td><td>Descripção</td><td>Preço</td><td>Apagar</td><td>Selecionar</td>
+
+      </tr>
+
+      <tr *ngFor="let art of articulos">
+
+        <td>{{art.Codigo}}</td>
+        <td>{{art.Descripção}}</td>
+        <td>{{art.Preço}}</td>
+
+        <td><button (click)="apagar(art)">Apagar?</button></td>
+
+        <td><button (click)="selecionar(art)">Selecionar</button></td>   
+
+      </tr>
+
+    </table>
+
+    <ng-template #simartigos><p>Não tem artigos.</p></ng-template>
+
+    <div>
+
+      <p>
+        Codigo:<input type="number" [(ngModel)]="art.codigo" />
+
+      </p>
+
+      <p>
+        Descripção:<input type="text" [(ngModel)]="art.Descripção" />
+      </p>
+
+      <p>
+        Preço:<input type="number" [(ngModel)]="art.preço" />
+      </p>            
+
+      <p><button (click)="adicionar()">Adicionar</button>
+
+      <button (click)="modificar()">Modificar</button></p>
+
+    </div>
+</div>

@@ -1,0 +1,86 @@
+
+<p>
+import (component , OnInit) from '@angular / core';
+
+@Component {{
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['.cart.component.css']
+}}
+export class cartcomponent implemt OnInit {
+
+  constructor () {}
+
+  ngOnInit () {]
+  }
+}
+
+</p>
+<h3> carrinho </h3>
+
+<div class = "cart-item" * ngFor = "deixe o item dos items">
+<span> {{item.name}} </span>
+<span> {{item.price | moeda}} </span>
+</div>
+
+<p>
+
+  carrinho funciona!
+</p>
+
+@Module ({
+  import: [BrowserModule
+  ReactiveFormsModule,
+  RouterModule.forRoot ([
+  (path: '', component: ProductListComponent ),
+  (path: 'produtos /: productId', component: ProdutDetailsComponent)
+  (path: 'carrinho', component: cartcomponent)
+  ])
+})
+]
+
+<h3> carrinho </h3>
+
+<p>
+  <a>
+  
+  < one routerLink = "/ transporte" > Os preços do transporte </a>
+  \\\\pendiente con esta variable 
+</p>
+
+<div class = "cart-item" *ngFor = "deixe o iktem dos itens">
+  <span> {{item.name}} </span>
+  <span> {{item.price | moeda}} </span>
+  </div>
+
+<form [formGroup ] = "checkoutForm">
+
+  <button class = "button" type = "submit"> Compre </button>
+
+</form>
+
+<form [formGroup ] = " checkoutForm" ( ngSubmit) = "onSubmit (checkoutForm.value)"
+
+<div>
+
+  <label for = "name">
+    Nome
+  </label>
+
+  <input id = "name" type = "text" formControlName = "name">
+</div>
+
+<div>
+
+  <label for = "adress">
+    Endereço
+
+  </label>
+
+  <input id = "adress" type = "text" formControlName = "adress">
+</div>
+
+<button class = "button" type = "submit" > Compre </button>
+
+</form>
+\\\\ hacer la inclusion de apis 
